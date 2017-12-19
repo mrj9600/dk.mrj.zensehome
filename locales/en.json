@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "title": "Zensehome bridge",
+    "application_settings": "Application settings",
+    "log_message_count": "The number of log messages to keep",
+    "loglegend": "Logs",
+    "log_intro": "Shows the last log lines from the zensehome app."
+  },
+  "pair": {
+    "configuration" : {
+      "name": "Name",
+      "ip_address" : "IP address",
+      "tcp_port" : "TCP port",
+      "bridge_id" : "Bridge id",
+      "configure" : "Configure",
+      "explanation" : "Setup parameters to connect to zensehome bridge.",
+      "tcp_port_invalid" : "The specified TCP port is invalid. Should be between 1 and 65535",
+      "bridge_id_invalid" : "The specified bridge id is invalid. Should be between 1 and 999999"
+    },
+    "select_bridge": {
+      "title" : "Select zensehome bridge connecting the devices",
+      "no_bridges" : "No zensehome bridge found - add one first"
+    }
+  }
+}

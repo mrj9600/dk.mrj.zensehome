@@ -1,0 +1,103 @@
+{
+    "id": "dk.mrj.zensehome",
+    "sdk": 2,
+    "name": {
+        "en": "Zensehome"
+    },
+    "description": {
+        "en": "Adds support for zensehome devices via bridge (aka. PC-boks)"
+    },
+    "category": "lights",
+    "version": "0.0.1",
+    "compatibility": ">=1.5.0",
+    "author": {
+        "name": "Martin Johansen",
+        "email": "martin@cm-johansen.dk"
+    },
+    "drivers": [
+        {
+            "id": "bridge",
+            "name": {
+                "en": "Bridge"
+            },
+            "class": "other",
+            "capabilities": [],
+            "images": {
+                "large": "assets//bridge/large.png",
+                "small": "assets//bridge/small.png"
+            },
+            "pair": [
+                {
+                    "id": "configure_ip"
+                }
+            ],
+            "settings": [
+                {
+                    "type": "group",
+                    "label": {
+                        "en": "Zensehome bridge settings"
+                    },
+                    "children": [
+                        {
+                            "id": "host",
+                            "type": "text",
+                            "value": "0.0.0.0",
+                            "label": {
+                                "en": "IP address"
+                            }
+                        },
+                        {
+                            "id": "tcp_port",
+                            "type": "number",
+                            "value": 10001,
+                            "label": {
+                                "en": "TCP port"
+                            }
+                        },
+                        {
+                            "id": "bridge_id",
+                            "type": "number",
+                            "value": 0,
+                            "label": {
+                                "en": "Bridge id"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ceiling_socket",
+            "name": {
+                "en": "Ceiling socket"
+            },
+            "class": "socket",
+            "capabilities": [
+                "onoff", "dim"
+            ],
+            "images": {
+                "large": "drivers/ceiling_socket/assets/large.png",
+                "small": "drivers/ceiling_socket/assets/small.png"
+            },
+            "pair": [
+                {
+                    "id": "select_bridge",
+                    "navigation": {
+                        "next": "list_devices"
+                    }
+                },
+                {
+                    "id": "list_devices",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_devices"
+                    }
+                },
+                {
+                    "id": "add_sockets",
+                    "template": "add_devices"
+                }
+            ]
+        }
+	]
+}
